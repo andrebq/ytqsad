@@ -9,12 +9,18 @@ function speedupVideo(nval) {
         video.playbackRate = nval;
     }
 }
+function autoClickSkipAd() {
+    const skipButton = document.querySelector('.ytp-ad-skip-button, .ytp-ad-skip-button-modern');
+    if (skipButton) {
+        skipButton.click();
+        console.info('Skip button clicked');
+    }
+}
 function checkAdd() {
     let adMod = document.querySelector('.ytp-ad-module');
     if (adMod && adMod.childElementCount > 0) {
-        console.info('Ad is playing...');
+        autoClickSkipAd();
         speedupVideo(10);
-        printStats();
     }
     ytqsadData.checks++;
 }

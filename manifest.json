@@ -1,5 +1,4 @@
 {
-
   "description": "Speedup YT Adds",
   "manifest_version": 2,
   "name": "YouTube QuickSilver Ads",
@@ -8,12 +7,20 @@
   "icons": {
     "48": "icons/border-48.png"
   },
-
   "content_scripts": [
     {
-      "matches": ["https://*.youtube.com/*"],
-      "js": ["fast-ad.js"]
+      "matches": [
+        "https://*.youtube.com/*"
+      ],
+      "js": [
+        "fast-ad.js"
+      ]
     }
-  ]
-
+  ],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "addon@example.com",
+      "strict_min_version": "58.0"
+    }
+  }
 }
